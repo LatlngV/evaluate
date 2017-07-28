@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <menuitem
+                id="menu_main"
+                name="员工评价"
+                sequence="0"
+                groups="evaluate.group_manager,evaluate.group_user"/>
+        <menuitem
+                id="menu_second_first"
+                name="评价列表"
+                parent="menu_main"
+                action="action_employee"/>
+        <menuitem
+                id="menu_second_second"
+                name="发起评价"
+                parent="menu_main"
+                action="action_start_survey"
+                groups="evaluate.group_manager"/>
+        <menuitem
+                id="menu_second_third"
+                name="评价试题"
+                parent="menu_main"
+                action="action_survey_question"
+                groups="evaluate.group_manager"/>
+        <menuitem
+                id="menu_second_forth"
+                name="试题答案"
+                parent="menu_main"
+                action="action_survey_answer"
+                groups="evaluate.group_manager"/>
+
+    </data>
+</odoo>

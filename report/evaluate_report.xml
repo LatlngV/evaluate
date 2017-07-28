@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <report
+                id="report_evaluate"
+                string="员工考核评价表"
+                model="employee.start.survey"
+                report_type="qweb-pdf"
+                file="evaluate.report_evaluate"
+                name="evaluate.report_evaluate_view"/>
+
+    </data>
+</odoo>

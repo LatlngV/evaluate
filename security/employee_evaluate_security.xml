@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <data>
+        <record id="evaluate_category" model="ir.module.category">
+            <field name="name">员工评价</field>
+            <field name="description">这是公司员工评价模块</field>
+            <field name="sequence">0</field>
+        </record>
+
+        <record id="evaluate.group_user" model="res.groups">
+            <field name="name">员工</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="evaluate.evaluate_category"/>
+        </record>
+        <record id="evaluate.group_manager" model="res.groups">
+            <field name="name">管理员</field>
+            <field name="implied_ids" eval="[(4, ref('evaluate.group_user'))]"/>
+            <field name="category_id" ref="evaluate.evaluate_category"/>
+        </record>
+    </data>
+
+</odoo>

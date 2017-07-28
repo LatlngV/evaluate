@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <template id="report_evaluate_view">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page" style="font-family: simsun; margin-top: 0px">
+                        <div class="row" style="width: 100%; text-align: center; color: #0F0F0F;">
+                            <h1 t-field="doc.title"/>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <h4>
+                                    <span style="font-weight: bold;">开始日期:</span>
+                                    <span style="margin-left: 50px;" t-field="doc.start_date"/>
+                                </h4>
+                            </div>
+                            <div>
+                                <h4>
+                                    <span style="font-weight: bold;">结束日期:</span>
+                                    <span style="margin-left: 50px;" t-field="doc.end_date"/>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <h4 style="color: #FF0000; font-weight: bold;">被评价人</h4>
+                                        </th>
+                                        <th>
+                                            <h4 style="color: #FF0000; font-weight: bold;">平均分数</h4>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="doc.passive_evaluate_line" t-as="detail">
+                                        <tr>
+                                            <td>
+                                                <h4>
+                                                    <span t-field="detail.passive_survey"/>
+                                                </h4>
+                                            </td>
+                                            <td>
+                                                <h4>
+                                                    <span t-field="detail.score"/>
+                                                </h4>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>
